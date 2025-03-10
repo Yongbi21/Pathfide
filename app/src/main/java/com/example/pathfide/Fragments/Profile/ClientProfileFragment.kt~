@@ -240,35 +240,6 @@ class ClientProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
-    private fun updateUserCommentsData(userId: String, firstName: String, lastName: String, profileImageUrl: String?) {
-        db.collectionGroup("comments")
-            .whereEqualTo("userId", userId)
-            .get()
-            .addOnSuccessListener { snapshot ->
-                val batch = db.batch()
-                for (document in snapshot.documents) {
-                    // Update firstName and lastName
-                    batch.update(document.reference, "firstName", firstName)
-                    batch.update(document.reference, "lastName", lastName)
-
-                    // Update profileImageUrl if not null
-                    if (profileImageUrl != null) {
-                        batch.update(document.reference, "profileImageUrl", profileImageUrl)
-                    }
-                }
-                batch.commit()
-                    .addOnSuccessListener {
-                        Log.d(TAG, "Successfully updated user data in ${snapshot.size()} comments.")
-                    }
-                    .addOnFailureListener { e ->
-                        Log.e(TAG, "Failed to update user data in comments: ${e.message}", e)
-                    }
-            }
-            .addOnFailureListener { e ->
-                Log.e(TAG, "Failed to retrieve user comments: ${e.message}", e)
-            }
-    }
-
 
     private fun uploadImageToServer(userId: String, onSuccess: (String) -> Unit) {
         if (selectedImageUri == null) {

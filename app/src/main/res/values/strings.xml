@@ -38,7 +38,7 @@
     <string name="fb_login_protocol_scheme">fb1847116102478081</string>
 
     <!--Google Login-->
-    <string name="default_web_client_id">974073729002-78bsi8lttjhlhnrar6rfc2lsbdi1ecq1.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">914346132615-j2grvmf945s21i31rl482cton9e6n9qh.apps.googleusercontent.com</string>
 
 
         <string-array name="country_codes_array">
