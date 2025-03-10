@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- TextInputLayout with TextInputEditText -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="What's on your mind?"
+        android:paddingBottom="8dp"
+        app:hintTextColor="@color/navy_blue"
+        app:boxStrokeColor="@color/navy_blue"
+        app:boxBackgroundMode="outline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/post_content_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="431dp"
+            android:gravity="top"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:maxLines="6"
+            android:minLines="4"
+            android:padding="8dp"
+            android:textColor="@color/navy_blue" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Character count TextView -->
+    <TextView
+        android:id="@+id/char_count_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/200"
+        android:layout_gravity="end" />
+
+    <!-- Spacer to push buttons to the bottom -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Buttons container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="70dp">
+
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/darkblue"
+            android:text="Post"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="Cancel"
+            android:textColor="@color/darkblue"
+            android:layout_marginTop="15dp"/>
+    </LinearLayout>
+</LinearLayout>

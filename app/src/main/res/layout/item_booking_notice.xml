@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notificationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+
+
+            <!-- LinearLayout to hold the two TextViews -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bookingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You've booked an online session with Dr. Ara on October 07, 2020"
+                    android:textSize="16sp"
+                    android:textColor="@color/darkblue"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/bookingMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To proceed with your schedule kindly click on the 'Confirm' button' and we will notify you once it's confirmed. "
+                    android:textSize="16sp"
+                    android:textColor="@color/darkblue"
+                    android:paddingTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?attr/selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/notificationMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You will then be redirected to payment and once the payment is completed, you'll receive another notification."
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="1"
+                    android:textColor="@color/darkblue"
+                    android:paddingTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?attr/selectableItemBackground" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

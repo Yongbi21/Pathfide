@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:paddingTop="?attr/actionBarSize">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+<!--                &lt;!&ndash; Modern CTA Button &ndash;&gt;-->
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/generateReportButton"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Generate Payment Report"-->
+<!--                    android:layout_marginBottom="16dp"-->
+<!--                    app:cornerRadius="12dp"-->
+<!--                    app:icon="@drawable/ic_report"-->
+<!--                    app:iconGravity="textStart"-->
+<!--                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"-->
+<!--                    android:backgroundTint="@color/navy_blue"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:padding="16dp"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textAllCaps="false"/>-->
+
+                <TableLayout
+                    android:id="@+id/paymentTableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*">
+
+                    <!-- Header Row with Bold Text -->
+                    <TableRow
+                        android:background="@color/navy_blue"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User ID"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:padding="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Payment Timestamp"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:padding="10dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Therapist ID"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Actions"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:padding="10dp" />
+                    </TableRow>
+                </TableLayout>
+
+                <!-- Page Counter and Pagination Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="16dp">
+
+                    <TextView
+                        android:id="@+id/pageCounterTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Page 1"
+                        android:textSize="18sp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/previousButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="Previous"
+                            android:enabled="false" />
+
+                        <Button
+                            android:id="@+id/nextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/navy_blue"
+                            android:textColor="@color/white"
+                            android:text="Next"
+                            android:enabled="false" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

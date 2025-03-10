@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Cope with loss"
+            android:textColor="#072E52"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:paddingRight="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:text="When someone you love dies, your world changes. There is no right or wrong way to mourn. Although the death of a loved one can feel overwhelming, most people can make it through the grieving process with the support of family and friends. Learn healthy ways to help you through difficult times."
+            android:textColor="#072E52"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="284dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="Info Icon"
+            android:src="@drawable/info" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1 - Assessment -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed1"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/starText1"
+                        android:text="Take care of yourself. Try to eat right, exercise, and get enough sleep. Avoid bad habits—like smoking or drinking alcohol—that can put your health at risk."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2 - Seek Professional Help -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed2"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/starText2"
+                        android:text="Talk to caring friends. Let others know when you want to talk."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3 - Mindfulness and Meditation -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed3"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/starText3"
+                        android:text="Find a grief support group. It might help to talk with others who are also grieving."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed4"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/starText4"
+                        android:text="Don’t make major changes right away. Wait a while before making big decisions like moving or changing jobs."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed5"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/starText5"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Talk to your doctor if you’re having trouble with everyday activities."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed6"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/starText6"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Consider additional support. Sometimes short-term talk therapy can help."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/meditation7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/starText7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starmed7"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/starText7"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Be patient. Mourning takes time. It’s common to have roller-coaster emotions for a while"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

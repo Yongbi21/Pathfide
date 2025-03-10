@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_marginTop="55dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvClientNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Client Name:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvClientName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/navy_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/tvClientNameLabel"
+                app:layout_constraintTop_toTopOf="@id/tvClientNameLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSessionTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Session Type:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvClientName" />
+
+            <TextView
+                android:id="@+id/tvSessionType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/navy_blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/tvSessionTypeLabel"
+                app:layout_constraintTop_toTopOf="@id/tvSessionTypeLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSessionDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Date:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSessionType" />
+
+            <TextView
+                android:id="@+id/tvSessionDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toEndOf="@id/tvSessionDateLabel"
+                app:layout_constraintTop_toTopOf="@id/tvSessionDateLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSessionTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Time:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSessionDate" />
+
+            <TextView
+                android:id="@+id/tvSessionTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintStart_toEndOf="@id/tvSessionTimeLabel"
+                app:layout_constraintTop_toTopOf="@id/tvSessionTimeLabel"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvStatusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Status:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/navy_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSessionTime" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            android:textColor="@color/navy_blue"
+            app:layout_constraintStart_toEndOf="@id/tvStatusLabel"
+            app:layout_constraintTop_toTopOf="@id/tvStatusLabel"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <GridLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/acceptBtn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/navy_blue"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Accept"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/rejectBtn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Decline"
+            android:backgroundTint="#A3C1DA"
+            android:layout_marginStart="15dp"
+            android:textAllCaps="false"
+            android:textColor="@color/navy_blue"
+            android:textSize="18sp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

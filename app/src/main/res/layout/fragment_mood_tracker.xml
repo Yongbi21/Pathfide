@@ -1,0 +1,213 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Date Text -->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Today, 30 August 2024"
+        android:textColor="#072E52"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/nunito"
+        android:gravity="center"
+        android:text="How are you feeling right now?"
+        android:textColor="#072E52"
+        android:textSize="25sp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold" />
+
+    <!-- RadioGroup to manage RadioButtons -->
+    <LinearLayout
+        android:id="@+id/emojiLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleText"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Happy Mood -->
+        <LinearLayout
+            android:id="@+id/happy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+  >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/happiness"
+                android:layout_marginRight="5dp"
+                android:contentDescription="Happy Emoji" />
+        </LinearLayout>
+
+        <!-- Anxious Mood -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+ >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/anxiety"
+                android:layout_marginRight="5dp"
+                android:contentDescription="Anxiety Emoji" />
+        </LinearLayout>
+
+        <!-- Mad Mood -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+     >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mad"
+                android:layout_marginRight="5dp"
+                android:contentDescription="Mad Emoji" />
+        </LinearLayout>
+
+        <!-- Sick Mood -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+    >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/sick"
+                android:contentDescription="Sick Emoji" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Mood Container -->
+    <LinearLayout
+        android:id="@+id/moodContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_below="@id/emojiLayout"
+        android:paddingHorizontal="16dp">
+
+        <!-- RadioGroup for Mood Selection -->
+        <RadioGroup
+            android:id="@+id/moodRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/radio_happy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Happy"
+                android:textColor="#072E52"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_anxiety"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anxious"
+                android:textColor="#072E52"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_mad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mad"
+                android:textColor="#072E52"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"/>
+
+            <RadioButton
+                android:id="@+id/radio_sick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sick"
+                android:textColor="#072E52"
+                android:gravity="center"
+                android:layout_marginEnd="8dp"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- TextInput for Description and Submit Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/moodContainer"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <!-- Description TextInput -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent">
+
+            <EditText
+                android:id="@+id/moodDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Describe what you feel in words."
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/moodButton"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#072E52"
+            android:text="Submit"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>
