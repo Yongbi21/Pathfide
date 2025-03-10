@@ -1,4 +1,4 @@
-package com.example.mindpath//package com.example.chatmessenger.activities
+package com.example.mindpath.Activities//package com.example.chatmessenger.activities
 //
 //import android.app.Dialog
 //import android.content.Intent

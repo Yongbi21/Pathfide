@@ -1,4 +1,4 @@
-package com.example.mindpath
+package com.example.mindpath.Activities
 
 import android.content.Intent
 import android.os.Bundle

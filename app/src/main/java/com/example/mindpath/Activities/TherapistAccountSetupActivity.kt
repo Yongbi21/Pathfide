@@ -1,4 +1,4 @@
-package com.example.mindpath
+package com.example.mindpath.Activities
 
 import android.app.Activity
 import android.app.DatePickerDialog
