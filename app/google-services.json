@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "433918158518",
-    "project_id": "mindpath-4ebd2",
-    "storage_bucket": "mindpath-4ebd2.firebasestorage.app"
+    "project_number": "914346132615",
+    "project_id": "pathfide",
+    "storage_bucket": "pathfide.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:433918158518:android:a3e20b6a5abcec91d0a817",
+        "mobilesdk_app_id": "1:914346132615:android:8cbf3aadbf113e69d22422",
         "android_client_info": {
-          "package_name": "com.example.mindpath"
+          "package_name": "com.example.pathfide"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAZN1S5sk2U33nGedcAZOAWOaZqSDXABic"
+          "current_key": "AIzaSyD5JIsT8jpsLB8SuwCoH9b8kIhaWCiEN9g"
         }
       ],
       "services": {

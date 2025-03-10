@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mindpath"
-    compileSdk = 34
+    namespace = "com.example.pathfide"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mindpath"
+        applicationId = "com.example.pathfide"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

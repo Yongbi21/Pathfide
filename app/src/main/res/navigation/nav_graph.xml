@@ -8,7 +8,7 @@
     <!-- Home Fragment -->
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.mindpath.fragments.HomeFragment"
+        android:name="com.example.pathfide.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
 
@@ -40,7 +40,7 @@
     <!-- Assessment Fragment -->
     <fragment
         android:id="@+id/assessmentFragment"
-        android:name="com.example.mindpath.fragments.AssessmentFragment"
+        android:name="com.example.pathfide.fragments.AssessmentFragment"
         android:label="Assessment"
         tools:layout="@layout/fragment_assesment">
 
@@ -52,7 +52,7 @@
 
     <fragment
         android:id="@+id/finalAssesmentFragment"
-        android:name="com.example.mindpath.fragments.assessment.FinalAssessmentFragment"
+        android:name="com.example.pathfide.fragments.assessment.FinalAssessmentFragment"
         android:label="Assessment"
         tools:layout="@layout/fragment_final_assesment">
         <action
@@ -65,7 +65,7 @@
     <!-- Seek Help Fragment -->
     <fragment
         android:id="@+id/seekHelpFragment"
-        android:name="com.example.mindpath.Fragments.Booking.SeekHelpFragment"
+        android:name="com.example.pathfide.Fragments.Booking.SeekHelpFragment"
         android:label="Seek Professional Help"
         tools:layout="@layout/fragment_seek_help" >
         <action
@@ -75,7 +75,7 @@
 
     <fragment
         android:id="@+id/professionalProfileFragment"
-        android:name="com.example.mindpath.Fragments.Booking.ProfessionalProfileFragment"
+        android:name="com.example.pathfide.Fragments.Booking.ProfessionalProfileFragment"
         android:label="Professional Profile"
         tools:layout="@layout/fragment_professional_profile" >
 
@@ -127,7 +127,7 @@
 
     <fragment
         android:id="@+id/bookingOptionFragment"
-        android:name="com.example.mindpath.Fragments.Booking.BookingOptionFragment"
+        android:name="com.example.pathfide.Fragments.Booking.BookingOptionFragment"
         android:label="Booking Option"
         tools:layout="@layout/fragment_booking_option" >
         <action
@@ -139,7 +139,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookingFormFragment"
-        android:name="com.example.mindpath.Fragments.Booking.BookingFormFragment"
+        android:name="com.example.pathfide.Fragments.Booking.BookingFormFragment"
         android:label="Booking Form"
         tools:layout="@layout/fragment_booking_form" >
         <action
@@ -148,7 +148,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookingMethodFragment"
-        android:name="com.example.mindpath.Fragments.Booking.BookingMethodFragment"
+        android:name="com.example.pathfide.Fragments.Booking.BookingMethodFragment"
         android:label="Booking Methods"
         android:launchMode="singleTop"
         tools:layout="@layout/fragment_booking_method" >
@@ -164,7 +164,7 @@
     </fragment>
     <fragment
         android:id="@+id/scheduledTimeFragment"
-        android:name="com.example.mindpath.Fragments.Booking.ScheduledTimeFragment"
+        android:name="com.example.pathfide.Fragments.Booking.ScheduledTimeFragment"
         android:label="Scheduled Time"
         tools:layout="@layout/fragment_scheduled_time" >
         <action
@@ -180,7 +180,7 @@
     <!-- Self-Care Tips Fragment -->
     <fragment
         android:id="@+id/selfCareTipsFragment"
-        android:name="com.example.mindpath.fragments.SelfCareTipsFragment"
+        android:name="com.example.pathfide.fragments.SelfCareTipsFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_selfcare_tips" >
         <action
@@ -206,7 +206,7 @@
     <!-- Threads Fragment -->
     <fragment
         android:id="@+id/threadsFragment"
-        android:name="com.example.mindpath.fragments.ThreadsFragment"
+        android:name="com.example.pathfide.fragments.ThreadsFragment"
         android:label="Feed"
         tools:layout="@layout/fragment_post" >
 
@@ -221,7 +221,7 @@
     <!-- Comment Fragment -->
     <fragment
         android:id="@+id/commentFragment"
-        android:name="com.example.mindpath.fragments.CommentFragment"
+        android:name="com.example.pathfide.fragments.CommentFragment"
         android:label="Comments">
         <argument
             android:name="postId"
@@ -232,7 +232,7 @@
     <!-- Mood Tracker Fragment -->
     <fragment
         android:id="@+id/moodTrackerFragment"
-        android:name="com.example.mindpath.fragments.MoodTrackerFragment"
+        android:name="com.example.pathfide.fragments.MoodTrackerFragment"
         android:label="Mood Tracker"
         tools:layout="@layout/fragment_mood_tracker" >
         <action
@@ -245,7 +245,7 @@
 
     <fragment
         android:id="@+id/moodSummaryFragment"
-        android:name="com.example.mindpath.fragments.MoodSummaryFragment"
+        android:name="com.example.pathfide.fragments.MoodSummaryFragment"
         android:label="Mood Summary"
         tools:layout="@layout/fragment_mood_summary" >
         <action
@@ -260,14 +260,14 @@
     <!-- Care Line Fragment -->
     <fragment
         android:id="@+id/careLineFragment"
-        android:name="com.example.mindpath.fragments.CarelineFragment"
+        android:name="com.example.pathfide.fragments.CarelineFragment"
         android:label="Care Line"
         tools:layout="@layout/fragment_careline" />
 
 
     <fragment
         android:id="@+id/chatMainFragment"
-        android:name="com.example.mindpath.Fragments.Chat.ChatMainFragment"
+        android:name="com.example.pathfide.Fragments.Chat.ChatMainFragment"
         android:label="Chat"
         tools:layout="@layout/fragment_chat_main">
         <action
@@ -277,7 +277,7 @@
 
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.example.mindpath.Fragments.Chat.ChatFragment"
+        android:name="com.example.pathfide.Fragments.Chat.ChatFragment"
         android:label="Chat"
         tools:layout="@layout/fragment_chat">
         <argument
@@ -289,7 +289,7 @@
     <!-- Profile Fragment  -->
     <fragment
         android:id="@+id/clientProfileFragment"
-        android:name="com.example.mindpath.Fragments.Profile.ClientProfileFragment"
+        android:name="com.example.pathfide.Fragments.Profile.ClientProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" >
 
@@ -305,7 +305,7 @@
     <!-- Notification Fragment -->
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.example.mindpath.Fragments.NotificationFragment"
+        android:name="com.example.pathfide.Fragments.NotificationFragment"
         android:label="Notification"
         tools:layout="@layout/fragment_notification" >
 
@@ -335,7 +335,7 @@
 
     <fragment
         android:id="@+id/appointmentRequestFragment"
-        android:name="com.example.mindpath.Fragments.AppointmentRequestFragment"
+        android:name="com.example.pathfide.Fragments.AppointmentRequestFragment"
         android:label="Appointment Request"
         tools:layout="@layout/fragment_appointment_request" />
 
@@ -343,7 +343,7 @@
 
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.example.mindpath.Fragments.PaymentFragment"
+        android:name="com.example.pathfide.Fragments.PaymentFragment"
         android:label="Payment Process"
         tools:layout="@layout/fragment_payment" >
         <action
@@ -354,7 +354,7 @@
 
     <fragment
         android:id="@+id/paymentSuccess"
-        android:name="com.example.mindpath.Fragments.PaymentSuccessFragment"
+        android:name="com.example.pathfide.Fragments.PaymentSuccessFragment"
         android:label="Payment Process"
         tools:layout="@layout/fragment_payment_success" >
         <action
@@ -366,7 +366,7 @@
     <!-- History Fragment  -->
     <fragment
         android:id="@+id/therapistHistoryFragment"
-        android:name="com.example.mindpath.fragments.HistoryFragment"
+        android:name="com.example.pathfide.fragments.HistoryFragment"
         android:label="Appointment History"
         tools:layout="@layout/fragment_history" >
 
@@ -385,7 +385,7 @@
     <!-- Client History Fragment -->
     <fragment
         android:id="@+id/clientHistoryFragment"
-        android:name="com.example.mindpath.fragments.HistoryFragment"
+        android:name="com.example.pathfide.fragments.HistoryFragment"
         android:label="Appointment History"
         tools:layout="@layout/fragment_history">
 
@@ -403,7 +403,7 @@
     <!-- Favorites Fragment -->
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.example.mindpath.fragments.FavoriteFragment"
+        android:name="com.example.pathfide.fragments.FavoriteFragment"
         android:label="Favorite Self-Care Tips"
         tools:layout="@layout/fragment_favorites" >
         <action
@@ -414,32 +414,32 @@
     <!--Fragments Under Self-Care Tips-->
     <fragment
         android:id="@+id/stressFragment"
-        android:name="com.example.mindpath.fragments.StressFragment"
+        android:name="com.example.pathfide.fragments.StressFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_stress"/>
     <fragment
         android:id="@+id/selfEsteemFragment"
-        android:name="com.example.mindpath.fragments.SelfEsteemFragment"
+        android:name="com.example.pathfide.fragments.SelfEsteemFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_self_esteem"/>
     <fragment
         android:id="@+id/meditationFragment"
-        android:name="com.example.mindpath.fragments.MeditationFragment"
+        android:name="com.example.pathfide.fragments.MeditationFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_meditation"/>
     <fragment
         android:id="@+id/ConnectionFragment"
-        android:name="com.example.mindpath.fragments.ConnectionFragment"
+        android:name="com.example.pathfide.fragments.ConnectionFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_connection"/>
     <fragment
         android:id="@+id/CopingFragment"
-        android:name="com.example.mindpath.fragments.CopingFragment"
+        android:name="com.example.pathfide.fragments.CopingFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_coping"/>
     <fragment
         android:id="@+id/MindfulFragment"
-        android:name="com.example.mindpath.fragments.SelfEsteemFragment"
+        android:name="com.example.pathfide.fragments.SelfEsteemFragment"
         android:label="Self-Care Tips"
         tools:layout="@layout/fragment_self_esteem"/>
 
@@ -447,7 +447,7 @@
     <!--Therapist Fragments-->
     <fragment
         android:id="@+id/TherapistHomeFragment"
-        android:name="com.example.mindpath.Fragments.TherapistHomeFragment"
+        android:name="com.example.pathfide.Fragments.TherapistHomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home_therapist">
 
@@ -472,7 +472,7 @@
     <!-- Profile Fragment  -->
     <fragment
         android:id="@+id/therapistProfileFragment"
-        android:name="com.example.mindpath.Fragments.Profile.TherapistProfileFragment"
+        android:name="com.example.pathfide.Fragments.Profile.TherapistProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_therapist_profile" >
 
@@ -489,7 +489,7 @@
     <!-- Admin Panel Fragment  -->
     <fragment
         android:id="@+id/adminPanelFragment"
-        android:name="com.example.mindpath.Fragments.AdminPanelFragment"
+        android:name="com.example.pathfide.Fragments.AdminPanelFragment"
         android:label="Admin Panel"
         tools:layout="@layout/fragment_admin_panel" >
 
