@@ -426,8 +426,8 @@
 
 
         private fun initializeZegoCallService(userId: String) {
-            val appID: Long = 1399133208
-            val appSign = "f61e1880dbd93e0d904e41c6a58b7b3a1843f40d7912202a1b4693d7eef52579"
+            val appID: Long = 1023203265
+            val appSign = "a7411ab41040b294397f9e8841fb08b98569bce28e5264e5c3857de67b9f75a2"
 
             db.collection("users").document(userId).get()
                 .addOnSuccessListener { document ->

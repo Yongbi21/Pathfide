@@ -10,12 +10,13 @@
         val lastMessage: String = "",
         @ServerTimestamp
         val lastMessageTimestamp: Date? = null,
-        val avatarUrl: String = "",
+        var avatarUrl: String = "",
         var firstName: String? = null,
         var lastName: String? = null,
         val profileImage: String = "",
         val userId: String = "",
         var user: User? = null, // Add this field to hold user details
         val isSystemMessage: Boolean = false,
+        val formattedTime: String = ""
 
     )
