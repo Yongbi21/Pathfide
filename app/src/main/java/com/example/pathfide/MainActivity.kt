@@ -113,6 +113,8 @@
                     R.id.bookingOptionFragment,
                     R.id.bookingMethodFragment,
                     R.id.scheduledTimeFragment,
+                    R.id.adminPanelFragment,
+
                     ),
                 drawerLayout
             )

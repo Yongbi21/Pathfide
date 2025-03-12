@@ -81,6 +81,7 @@ class AppointmentHistoryAdapter(private val userType: String) : RecyclerView.Ada
                 }
             }
             tvPaymentStatus.text = paymentText
+
         }
 
     }

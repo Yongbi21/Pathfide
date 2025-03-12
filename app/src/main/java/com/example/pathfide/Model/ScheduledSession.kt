@@ -18,6 +18,7 @@ data class ScheduledSession(
     val therapistId: String? = null,
     val timestamp: Timestamp = Timestamp.now(),
     val paymentStatus: String = "Pending",
-    val isRebooking: Boolean = false
+    val isRebooking: Boolean = false,
+    val isCompleted: Boolean = false
 
-    )
+)

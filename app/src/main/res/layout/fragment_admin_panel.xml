@@ -22,23 +22,6 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-<!--                &lt;!&ndash; Modern CTA Button &ndash;&gt;-->
-<!--                <com.google.android.material.button.MaterialButton-->
-<!--                    android:id="@+id/generateReportButton"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Generate Payment Report"-->
-<!--                    android:layout_marginBottom="16dp"-->
-<!--                    app:cornerRadius="12dp"-->
-<!--                    app:icon="@drawable/ic_report"-->
-<!--                    app:iconGravity="textStart"-->
-<!--                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"-->
-<!--                    android:backgroundTint="@color/navy_blue"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:padding="16dp"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:textAllCaps="false"/>-->
-
                 <TableLayout
                     android:id="@+id/paymentTableLayout"
                     android:layout_width="match_parent"
@@ -59,6 +42,7 @@
                             android:textStyle="bold"
                             android:gravity="center"
                             android:padding="10dp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -67,10 +51,20 @@
                             android:textStyle="bold"
                             android:gravity="center"
                             android:padding="10dp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Therapist ID"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Image Proof"
                             android:textColor="#FFFFFF"
                             android:textStyle="bold"
                             android:gravity="center"

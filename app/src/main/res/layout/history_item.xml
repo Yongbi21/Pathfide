@@ -27,7 +27,7 @@
                 android:src="@drawable/person" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="246dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -37,44 +37,65 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dr. Princess Morados, Ph.D."
-                    android:textSize="18sp"
                     android:textColor="@color/darkblue"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/AppointmentSession"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
                     android:text="Session Mode: Online Session"
-                    android:textSize="16sp"
                     android:textColor="@color/darkblue"
-                    android:paddingTop="5dp" />
+                    android:textSize="16sp" />
+
                 <TextView
                     android:id="@+id/AppointmentDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
                     android:text="Date: September 19, 2024"
-                    android:textSize="16sp"
                     android:textColor="@color/darkblue"
-                    android:paddingTop="5dp" />
+                    android:textSize="16sp" />
+
                 <TextView
                     android:id="@+id/AppointmentTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
                     android:text="Time: 10:00 AM - 10:30 AM"
-                    android:textSize="16sp"
                     android:textColor="@color/darkblue"
-                    android:paddingTop="5dp" />
+                    android:textSize="16sp" />
+
                 <TextView
                     android:id="@+id/AppointmentStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
                     android:text="Status: Pending"
-                    android:textSize="16sp"
                     android:textColor="@color/darkblue"
-                    android:paddingTop="5dp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCheckCompleted"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="Completed"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/acceptButtonColor"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                app:icon="@drawable/ic_checkmark"
+                app:iconTint="@color/white"
+                android:focusable="true"
+                android:clickable="true"
+                app:iconPadding="6dp"
+                app:cornerRadius="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:visibility="visible"/>
 
         </LinearLayout>
 

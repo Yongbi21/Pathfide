@@ -17,7 +17,7 @@
         import kotlinx.coroutines.tasks.await
 
         import android.content.Context
-
+        import com.google.firebase.firestore.Query
 
 
         class NotificationViewModel : ViewModel() {
@@ -444,17 +444,20 @@
                             )
                         }
 
-                        // Fetch payment status for each session
+                        // Fetch correct payment status for each session
                         val updatedSessions = sessions.map { session ->
-                            // Query the payments collection for this session
-                            val paymentDoc = firestore.collection("payments")
-                                .whereEqualTo(if (userType == "CLIENT") "clientId" else "therapistId", currentUserId)
+                            val paymentQuery = firestore.collection("payments")
+                                .whereEqualTo("clientId", currentUserId)
+                                .whereEqualTo("sessionId", session.id) // Ensure correct session
+                                .orderBy("timestamp", Query.Direction.DESCENDING) // Get latest payment
+                                .limit(1)
                                 .get()
                                 .await()
-                                .documents.firstOrNull()
 
+                            val paymentDoc = paymentQuery.documents.firstOrNull()
                             val paymentStatus = paymentDoc?.getString("status") ?: "Pending"
-                            Log.d("NotificationViewModel", "Payment status for session ${session.id}: $paymentStatus")
+
+                            Log.d("NotificationViewModel", "Session ${session.id} - Payment ID: ${paymentDoc?.id}, Status: $paymentStatus")
 
                             session.copy(paymentStatus = if (paymentStatus == "Payment Successful!") "Paid" else "Pending")
                         }

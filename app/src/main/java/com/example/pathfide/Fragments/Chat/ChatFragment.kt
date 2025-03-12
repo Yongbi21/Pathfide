@@ -124,7 +124,12 @@ class ChatFragment : Fragment() {
     }
 
     private fun setupCallEndListener() {
-        Log.d("ZegoInvite", "⚡ Setting up CallEndListener...") // Log before setting
+        if (ZegoUIKitPrebuiltCallService.events.callEvents.callEndListener != null) {
+            Log.d("ZegoInvite", "⚠ CallEndListener already set. Skipping duplicate setup.")
+            return
+        }
+
+        Log.d("ZegoInvite", "⚡ Setting up CallEndListener...")
 
         ZegoUIKitPrebuiltCallService.events.callEvents.callEndListener =
             object : CallEndListener {
@@ -155,6 +160,7 @@ class ChatFragment : Fragment() {
         Log.d("ZegoInvite", "🔥 CallEndListener has been set")
     }
 
+
     private fun formatDuration(seconds: Long): String {
         val hours = seconds / 3600
         val minutes = (seconds % 3600) / 60
@@ -170,10 +176,11 @@ class ChatFragment : Fragment() {
 
 
     private fun sendCallEndedMessage(messageText: String = "Video call ended.") {
+        Log.d("ChatFragment", "📞 Attempting to send call-ended message: $messageText")
+
         firestore.collection("Calls").document(chatId).get()
             .addOnSuccessListener { document ->
                 val initiatorId = document.getString("initiatorId") ?: currentUserId
-
                 val messageData = hashMapOf(
                     "content" to messageText,
                     "senderId" to initiatorId,

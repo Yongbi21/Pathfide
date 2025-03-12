@@ -15,7 +15,14 @@ import androidx.fragment.app.Fragment
 import com.example.pathfide.R
 import com.google.firebase.firestore.FirebaseFirestore
 import android.graphics.Typeface
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.example.pathfide.Utils.PaymentNotificationHelper
+import android.app.Dialog
+import android.graphics.drawable.ColorDrawable
+import androidx.compose.ui.graphics.Color
+import com.google.firebase.firestore.ListenerRegistration
+
 
 data class Payment(
     val clientId: String = "",
@@ -23,8 +30,10 @@ data class Payment(
     val amountPaid: String = "",
     val paymentTimestamp: String = "",
     val paymentProofUrl: String = "",
+    val profileImageUrl: String = "", // Add this field
     val status: String = ""
 )
+
 
 class AdminPanelFragment : Fragment() {
     private lateinit var paymentTableLayout: TableLayout
@@ -32,6 +41,7 @@ class AdminPanelFragment : Fragment() {
     private lateinit var previousButton: Button
     private lateinit var nextButton: Button
     private val db = FirebaseFirestore.getInstance()
+    private lateinit var paymentsListener: ListenerRegistration
 
     private val paymentsPerPage = 10
     private var currentPage = 1
@@ -62,28 +72,38 @@ class AdminPanelFragment : Fragment() {
             }
         }
 
-        fetchPayments()
+        fetchPaymentsRealtime()
 
         return view
     }
 
-    private fun fetchPayments() {
-        db.collection("payments")
+    private fun fetchPaymentsRealtime() {
+        // Clear any existing listener to prevent memory leaks
+        if (::paymentsListener.isInitialized) {
+            paymentsListener.remove()
+        }
+
+        // Set up real-time listener
+        paymentsListener = db.collection("payments")
             .whereEqualTo("status", "Pending")
-            .get()
-            .addOnSuccessListener { result ->
-                allPayments.clear()
-                for (document in result) {
-                    val payment = document.toObject(Payment::class.java)
-                    allPayments.add(Pair(document.id, payment))
+            .addSnapshotListener { snapshot, error ->
+                if (error != null) {
+                    Toast.makeText(requireContext(), "Error fetching payment data", Toast.LENGTH_SHORT).show()
+                    return@addSnapshotListener
                 }
-                updatePaginationControls()
-                displayCurrentPage()
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(requireContext(), "Error fetching payment data", Toast.LENGTH_SHORT).show()
+
+                snapshot?.let { result ->
+                    allPayments.clear()
+                    for (document in result) {
+                        val payment = document.toObject(Payment::class.java)
+                        allPayments.add(Pair(document.id, payment))
+                    }
+                    updatePaginationControls()
+                    displayCurrentPage()
+                }
             }
     }
+
 
     private fun displayCurrentPage() {
         paymentTableLayout.removeAllViews()
@@ -128,6 +148,14 @@ class AdminPanelFragment : Fragment() {
                 setPadding(16, 16, 16, 16)
             },
             TextView(requireContext()).apply {
+                text = " Image Proof"
+                layoutParams = layoutParams
+                setTextColor(resources.getColor(R.color.white))
+                setTypeface(null, Typeface.BOLD)
+                gravity = Gravity.CENTER
+                setPadding(16, 16, 16, 16)
+            },
+            TextView(requireContext()).apply {
                 text = "Actions"
                 layoutParams = layoutParams
                 setTextColor(resources.getColor(R.color.white))
@@ -160,6 +188,7 @@ class AdminPanelFragment : Fragment() {
     }
 
 
+    // Fixed addPaymentRow method
     private fun addPaymentRow(documentId: String, payment: Payment) {
         val tableRow = TableRow(requireContext()).apply {
             setPadding(8, 8, 8, 8)
@@ -195,6 +224,36 @@ class AdminPanelFragment : Fragment() {
             gravity = Gravity.CENTER
             setPadding(16, 16, 16, 16)
         }
+
+        // Create image proof column
+        val imageProofContainer = LinearLayout(requireContext()).apply {
+            this.layoutParams = layoutParams
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+            setPadding(16, 16, 16, 16)
+        }
+
+        // View Button for payment proof image
+        val viewButton = Button(requireContext()).apply {
+            text = "View"
+            setCompoundDrawablesWithIntrinsicBounds(R.drawable.eye, 0, 0, 0)
+            gravity = Gravity.CENTER
+            setPadding(16, 16, 16, 16)
+            setTextColor(resources.getColor(R.color.black))
+            setBackgroundColor(resources.getColor(R.color.white))
+
+            // Use the paymentProofUrl directly from the payment object
+            setOnClickListener {
+                if (!payment.paymentProofUrl.isNullOrEmpty()) {
+                    showImagePopup(payment.paymentProofUrl)
+                } else {
+                    Toast.makeText(requireContext(), "No payment proof image found", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        // Add view button to its container
+        imageProofContainer.addView(viewButton)
 
         // Buttons container with layout params
         val buttonsContainer = LinearLayout(requireContext()).apply {
@@ -233,12 +292,57 @@ class AdminPanelFragment : Fragment() {
             addView(userIdTextView)
             addView(timestampTextView)
             addView(therapistIdTextView)
-            addView(buttonsContainer)
+            addView(imageProofContainer)   // Add the container with the view button
+            addView(buttonsContainer)      // Add the container with accept/decline buttons
         }
 
         // Add row to table
         paymentTableLayout.addView(tableRow)
     }
+
+
+    private fun showImagePopup(imageUrl: String) {
+        // Create a dialog
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.image_popout)
+
+        // Make dialog use most of the screen
+        dialog.window?.apply {
+            setLayout(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+
+        }
+
+        // Find the ImageView in the dialog layout
+        val fullImageView = dialog.findViewById<ImageView>(R.id.fullImageView)
+
+        // Set fixed large size for the ImageView
+        val displayMetrics = resources.displayMetrics
+        val width = (displayMetrics.widthPixels * 0.85).toInt() // 85% of screen width
+        val height = (displayMetrics.heightPixels * 0.7).toInt() // 70% of screen height
+
+        fullImageView.layoutParams = fullImageView.layoutParams.apply {
+            this.width = width
+            this.height = height
+        }
+
+        // Load the full image using Glide
+        Glide.with(requireContext())
+            .load(imageUrl)
+            .placeholder(R.drawable.upload)
+            .into(fullImageView)
+
+        // Set click listener to close the dialog
+        fullImageView.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        // Show the dialog
+        dialog.show()
+    }
+
 
 
     private fun updatePaymentStatus(documentId: String, status: String) {
@@ -262,7 +366,7 @@ class AdminPanelFragment : Fragment() {
                             paymentId = documentId
                         )
 
-                        fetchPayments()
+                        fetchPaymentsRealtime()
                     }
                     .addOnFailureListener {
                         Toast.makeText(requireContext(), "Error updating payment status", Toast.LENGTH_SHORT).show()
@@ -277,5 +381,18 @@ class AdminPanelFragment : Fragment() {
     private fun updatePaginationControls() {
         previousButton.isEnabled = currentPage > 1
         nextButton.isEnabled = currentPage * paymentsPerPage < allPayments.size
+    }
+
+
+    private fun cleanupListener() {
+        if (::paymentsListener.isInitialized) {
+            paymentsListener.remove()
+        }
+    }
+
+    // Call this in onDestroyView() or similar lifecycle method
+    override fun onDestroyView() {
+        super.onDestroyView()
+        cleanupListener()
     }
 }
