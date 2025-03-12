@@ -33,6 +33,9 @@
         <item>Guardian</item>
     </string-array>
 
+    <!-- Facebook Login -->
+    <string name="facebook_app_id">1847116102478081</string>
+    <string name="fb_login_protocol_scheme">fb1847116102478081</string>
 
 
 
