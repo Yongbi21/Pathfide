@@ -250,7 +250,6 @@ class ChatFragment : Fragment() {
                 .addOnSuccessListener { document ->
                     val fcmToken = document.getString("fcmToken")
                     if (!fcmToken.isNullOrEmpty()) {
-                        sendFCMNotification(fcmToken, messageContent)
                     }
                 }
                 .addOnFailureListener { e ->
@@ -261,40 +260,6 @@ class ChatFragment : Fragment() {
         }
     }
 
-    fun sendFCMNotification(fcmToken: String, message: String) {
-        val client = OkHttpClient()
-        val json = JSONObject()
-        val notification = JSONObject()
-        val data = JSONObject()
-
-        notification.put("title", "New Message")
-        notification.put("body", message)
-        data.put("chatId", chatId)
-        data.put("senderId", currentUserId)
-
-        json.put("to", fcmToken)
-        json.put("notification", notification)
-        json.put("data", data)
-
-        val requestBody = json.toString().toRequestBody("application/json".toMediaTypeOrNull())
-
-        val request = Request.Builder()
-            .url("https://fcm.googleapis.com/fcm/send")
-            .post(requestBody)
-            .addHeader("Authorization", "Bearer YOUR_SERVER_KEY")
-            .addHeader("Content-Type", "application/json")
-            .build()
-
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                Log.e("FCM", "FCM notification failed: ${e.message}")
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                Log.d("FCM", "FCM notification sent: ${response.body?.string()}")
-            }
-        })
-    }
 
 
     private fun fetchUserDetails(userId: String?) {

@@ -17,6 +17,7 @@
     import androidx.lifecycle.ViewModelProvider
     import androidx.navigation.NavController
     import androidx.navigation.NavGraph
+    import androidx.navigation.NavOptions
     import androidx.navigation.fragment.NavHostFragment
     import androidx.navigation.ui.AppBarConfiguration
     import androidx.navigation.ui.NavigationUI
@@ -111,7 +112,7 @@
                     R.id.favoriteFragment,
                     R.id.bookingOptionFragment,
                     R.id.bookingMethodFragment,
-                    R.id.scheduledTimeFragment
+                    R.id.scheduledTimeFragment,
                     ),
                 drawerLayout
             )
@@ -157,6 +158,15 @@
                             "NavigationItemSelected: Navigating to fragment ID ${menuItem.itemId}"
                         )
                         navigateToFragment(menuItem.itemId)
+                        drawerLayout.closeDrawers()
+                        true
+                    }
+                    R.id.clientHistoryFragment -> {
+                        // Force navigation to the fragment regardless of current destination
+                        navController.navigate(R.id.clientHistoryFragment, null,
+                            NavOptions.Builder()
+                                .setPopUpTo(navController.graph.startDestinationId, false)
+                                .build())
                         drawerLayout.closeDrawers()
                         true
                     }
