@@ -33,12 +33,7 @@
         <item>Guardian</item>
     </string-array>
 
-    <!-- Facebook Login -->
-    <string name="facebook_app_id">1847116102478081</string>
-    <string name="fb_login_protocol_scheme">fb1847116102478081</string>
 
-    <!--Google Login-->
-    <string name="default_web_client_id">914346132615-j2grvmf945s21i31rl482cton9e6n9qh.apps.googleusercontent.com</string>
 
 
         <string-array name="country_codes_array">

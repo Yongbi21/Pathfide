@@ -451,7 +451,7 @@ class ChatFragment : Fragment() {
 
                         videoCallButton?.apply {
                             setInvitees(listOf(partnerUser))
-                            setResourceID("zego_uikit_call")
+                            setResourceID("zego_call")
                             setIsVideoCall(true)
 
                             videoCallButton?.setOnClickListener(View.OnClickListener {
