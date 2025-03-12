@@ -1,0 +1,95 @@
+package com.example.mindpath.Activities
+
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.mindpath.R
+import com.zegocloud.uikit.prebuilt.call.ZegoUIKitPrebuiltCallConfig
+import com.zegocloud.uikit.prebuilt.call.ZegoUIKitPrebuiltCallFragment
+import com.zegocloud.uikit.prebuilt.call.config.ZegoPrebuiltAudioVideoViewConfig
+
+class VideoCallActivity : AppCompatActivity() {
+    companion object {
+        private const val TAG = "VideoCallActivity"
+        private const val APP_ID = 1399133208
+        private const val APP_SIGN = "f61e1880dbd93e0d904e41c6a58b7b3a1843f40d7912202a1b4693d7eef52579"
+        private const val PERMISSION_REQUEST_CODE = 101
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_video_call)
+
+        val userId = intent.getStringExtra("USER_ID")
+        val callId = intent.getStringExtra("CALL_ID")
+        val displayName = intent.getStringExtra("DISPLAY_NAME") ?: "User"
+
+        if (userId.isNullOrEmpty() || callId.isNullOrEmpty()) {
+            Log.e(TAG, "Missing USER_ID or CALL_ID (USER_ID: $userId, CALL_ID: $callId)")
+            Toast.makeText(this, "Missing call information", Toast.LENGTH_SHORT).show()
+            finish()
+            return
+        }
+
+        Log.d(TAG, "Received intent extras - USER_ID: $userId, CALL_ID: $callId, DISPLAY_NAME: $displayName")
+
+        checkPermissions()
+        initializeVideoCall(userId, callId, displayName)
+    }
+
+    private fun initializeVideoCall(userId: String, callId: String, displayName: String) {
+        try {
+            Log.d(TAG, "Initializing video call - userId: $userId, displayName: $displayName, callId: $callId")
+            Log.d(TAG, "Using App ID: $APP_ID")
+            Log.d(TAG, "Using App Sign: $APP_SIGN")
+
+            // Configure video view settings
+            val videoViewConfig = ZegoPrebuiltAudioVideoViewConfig().apply {
+                showUserNameOnView = true
+            }
+
+            val config = ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall().apply {
+                turnOnCameraWhenJoining = true
+                turnOnMicrophoneWhenJoining = true
+                useSpeakerWhenJoining = true
+                audioVideoViewConfig = videoViewConfig
+            }
+
+            val callFragment = ZegoUIKitPrebuiltCallFragment.newInstance(
+                APP_ID.toLong(),
+                APP_SIGN,
+                userId,
+                displayName,
+                callId,
+                config
+            )
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.call_container, callFragment)
+                .commitNow()
+
+            Log.d(TAG, "Video call initialized with display name: $displayName")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error initializing video call", e)
+            Toast.makeText(this, "Failed to initialize call: ${e.message}", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+    }
+    private fun checkPermissions() {
+        val permissions = arrayOf(
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.BLUETOOTH_CONNECT
+        )
+        requestPermissions(permissions, PERMISSION_REQUEST_CODE)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "Call ended successfully")
+    }
+
+}

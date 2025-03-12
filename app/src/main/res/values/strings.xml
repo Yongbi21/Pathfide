@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">Mindpath</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <!-- Language Options for the Spinner -->
+    <string-array name="languages">
+        <item>English</item>
+        <item>Tagalog</item>
+        <item>Bisaya</item>
+    </string-array>
+
+    <string-array name="gender_array">
+        <item>---Select Gender---</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="relationship_array">
+        <item>---Select Occupation---</item>
+        <item>Mother</item>
+        <item>Father</item>
+        <item>Grandmother</item>
+        <item>Grandfather</item>
+        <item>Guardian</item>
+    </string-array>
+
+
+
+
+        <string-array name="country_codes_array">
+            <item>+63 (PH)</item>
+        </string-array>
+
+        <!-- First Question Set -->
+        <string name="question_1">How have you been feeling over the past few weeks?</string>
+        <string name="question_1_a">How often do you engage in physical exercise?</string> <!-- Very Good -->
+        <string name="question_1_b">How often do you feel overwhelmed by your responsibilities?</string> <!-- Good -->
+        <string name="question_1_c">How often do you experience feelings of loneliness?</string> <!-- Neutral -->
+        <string name="question_1_d">How often do you feel anxious or stressed recently?</string> <!-- Bad -->
+        <string name="question_1_e">How frequently do you feel down, depressed, or hopeless?</string> <!-- Very Bad -->
+
+        <!-- Second Question Set -->
+        <string name="question_2">How connected do you feel to others in your life?</string>
+        <string name="question_2_a">How satisfied are you with your social interactions?</string> <!-- Very Good -->
+        <string name="question_2_b">How often do you seek help when you need it?</string> <!-- Good -->
+        <string name="question_2_c">How well do you handle stress when it arises?</string> <!-- Neutral -->
+        <string name="question_2_d">How often do you feel isolated?</string> <!-- Bad -->
+        <string name="question_2_e">How often do you feel like no one understands you?</string> <!-- Very Bad -->
+
+        <!-- Third Question Set -->
+        <string name="question_3">How frequently have you felt down, depressed, or hopeless?</string>
+        <string name="question_3_a">How often do you feel content and fulfilled?</string> <!-- Very Good -->
+        <string name="question_3_b">How often do you find joy in everyday activities?</string> <!-- Good -->
+        <string name="question_3_c">How often do you feel indifferent?</string> <!-- Neutral -->
+        <string name="question_3_d">How often do you feel discouraged?</string> <!-- Bad -->
+        <string name="question_3_e">How often do you feel hopeless?</string> <!-- Very Bad -->
+
+        <!-- Fourth Question Set -->
+        <string name="question_4">How often have you felt anxious or stressed recently?</string>
+        <string name="question_4_a">How well do you cope with stress?</string> <!-- Very Good -->
+        <string name="question_4_b">How often do you engage in relaxation techniques?</string> <!-- Good -->
+        <string name="question_4_c">How often do you feel neutral about stress?</string> <!-- Neutral -->
+        <string name="question_4_d">How often do you feel overwhelmed by stress?</string> <!-- Bad -->
+        <string name="question_4_e">How frequently do you feel paralyzed by anxiety?</string> <!-- Very Bad -->
+
+        <!-- Fifth Question Set -->
+        <string name="question_5">How well have you been sleeping in the past week?</string>
+        <string name="question_5_a">How well do you feel rested?</string> <!-- Very Good -->
+        <string name="question_5_b">How often do you wake up refreshed?</string> <!-- Good -->
+        <string name="question_5_c">How often do you feel neutral about your sleep?</string> <!-- Neutral -->
+        <string name="question_5_d">How often do you struggle to fall asleep?</string> <!-- Bad -->
+        <string name="question_5_e">How frequently do you experience insomnia?</string> <!-- Very Bad -->
+
+
+        <!-- Revised Question Set -->
+        <string name="question1f">About how often did you feel tired out for no good reason?</string>
+        <string name="question2f">About how often did you feel nervous?</string>
+        <string name="question3f">About how often did you feel so nervous that nothing could calm you down?</string>
+        <string name="question4f">About how often did you feel hopeless?</string>
+        <string name="question5f">About how often did you feel restless or fidgety?</string>
+        <string name="question6f">About how often did you feel so restless you could not sit still?</string>
+        <string name="question7f">About how often did you feel depressed?</string>
+        <string name="question8f">About how often did you feel that everything was an effort?</string>
+        <string name="question9f">About how often did you feel so sad that nothing could cheer you up?</string>
+        <string name="question10f">About how often did you feel worthless?</string>
+
+
+        <!--Tagalog Question Set-->
+        <string name="tagalogquestion1">Gaano ka kadalas nakakaramdam ng pagod na walang dahilan?</string>
+        <string name="tagalogquestion2">Gaano ka kadalas nakakaramdam ng nerbyos?</string>
+        <string name="tagalogquestion3">Gaano kadalas mong naramdaman ang pagkaba na hirap ng mapigilan?</string>
+        <string name="tagalogquestion4">Gaano ka kadalas nakaramdam na wala ng pagasa?</string>
+        <string name="tagalogquestion5">Gaano kadalas kang nakaramdam na pagkabalisa?</string>
+        <string name="tagalogquestion6">Gaano ka kadalas nakakaramdam ng pagkabalisa na hirap at hindi na mapakali?</string>
+        <string name="tagalogquestion7">Gaano kadalas kang nakakaramdam ng  depresyon?</string>
+        <string name="tagalogquestion8">Gaano mo kadalas naramdaman na ang lahat ay isang pagsisikap?</string>
+        <string name="tagalogquestion9">Gaano kadalas ka nalulungkot na walang makapagpapasaya sa iyo?</string>
+        <string name="tagalogquestion10">Gaano kadalas mong nararamdam ang pagiging walang kwenta?</string>
+
+
+        <!--Bisaya Question Set-->
+        <string name="bisayaquestion1">Mahitungod sa unsa ka sagad nimo gibati ang kakapoy sa walay igong rason?</string>
+        <string name="bisayaquestion2">Unsa ka sagad gibati nimo ang kakulba?</string>
+        <string name="bisayaquestion3">Unsa ka subsob nga gibati nimo ang hilabihang kakulba nga walay makapakalma kanimo?</string>
+        <string name="bisayaquestion4">Unsa ka subsob nga gibati nimo ang pagkawalay paglaum?</string>
+        <string name="bisayaquestion5">Unsa ka subsob ang imong gibati nga dili mahimutang o way tulog?</string>
+        <string name="bisayaquestion6">Unsa ka subsob ang imong gibati nga dili mahimutang nga dili ka mulihok?</string>
+        <string name="bisayaquestion7">Unsa ka subsob nga gibati nimo ang depresyon?</string>
+        <string name="bisayaquestion8">Unsa ka sagad imong gibati nga ang tanan kinahanglan ka maningkamot?</string>
+        <string name="bisayaquestion9">Unsa ka subsob ang imong gibating kaguol nga walay makapalipay kanimo?</string>
+        <string name="bisayaquestion10">Unsa ka subsob nga gibati nimo nga wala kay gamit?</string>
+
+
+
+
+    <!-- Assessment -->
+        <string name="outcome6f">You’re doing well—keep it up! Stay active, connect with others in our feed, and keep up the self-care, but don’t forget to check in our daily mood tracker regularly!</string> <!-- Very Good -->
+        <string name="outcome6f2">You may want to try adopting stress-management techniques like journaling and exercising, and make sure to explore our self-care tips for more support!</string> <!-- Good -->
+        <string name="outcome6f3">It seems like youre having a tough time—remember, its okay to seek support. Consider using our "Seek Professional" feature to connect with a mental health professional for coping strategies. Talking to a friend or family member can also provide comfort. </string> <!-- Neutral -->
+        <string name="outcome6f4">We highly recommend seeking help from a mental health professional. Book an appointment in our "Seek Professional" feature. If youre in urgent need of support, our care hotline is available for immediate assistance. Reaching out now can help you better manage your mental health and prevent further challenges down the road</string> <!-- Bad -->
+
+
+
+
+    <!-- Assessment -->
+        <string name="outcome_6_a">Your responses indicate a strong sense of well-being and resilience. Continue to engage in activities that support your mental health, and consider sharing your strategies with others who might benefit</string> <!-- Very Good -->
+        <string name="outcome_6_b">You appear to be managing well, but some areas could benefit from attention. Explore ways to enhance your coping mechanisms and strengthen social connections.</string> <!-- Good -->
+        <string name="outcome_6_c">Your responses suggest a balance in your well-being, but there may be underlying issues to address. Reflect on what aspects of your life bring you joy and consider making small adjustments to enhance your overall satisfaction</string> <!-- Neutral -->
+        <string name="outcome_6_d">It seems you are facing challenges that may be affecting your mental health. It’s important to identify specific stressors and seek support, whether through friends, family, or mental health professionals</string> <!-- Bad -->
+        <string name="outcome_6_e">Your responses indicate significant distress. Please prioritize seeking professional help. Addressing these feelings early can lead to better outcomes, and support is available to help you navigate this difficult time</string> <!-- Very Bad -->
+
+        <string name="agora_app_id">44f25c748baa49fd8879ef014209f8a0</string>
+        <string name="agora_app_certificate">290be05df79d40aebb65435ea80662ab></string>
+
+
+    <!--Language Settings Resources-->
+        <string name="confirm_button">Confirm</string>
+        <string name="back_button">Back</string>
+        <string name="language_settings_title">Language Settings</string>
+        <string name="language_description_text">Choose your preferred language</string>
+        <string name="language_change_processing">Changing language, please wait...</string>
+        <string name="language_changed_message">Language changed to successfully!</string>
+
+        <string name="retry">Retry</string>
+        <string name="end_call">End Call</string>
+        <string name="connection_failed_retry">Connection failed. Please try again.</string>
+
+
+        <string name="default_notification_channel_id">session_reminders</string>
+        <string name="msg_subscribe_failed">Failed to subscribe to topic</string>
+
+
+        <!-- English -->
+        <string name="never">Never</string>
+        <string name="rarely">Rarely</string>
+        <string name="sometimes">Sometimes</string>
+        <string name="often">Often</string>
+        <string name="always">Always</string>
+
+        <!-- Tagalog -->
+        <string name="hindi_kailanman">Hindi Kailanman</string>
+        <string name="bihira">Bihira</string>
+        <string name="kadalasan">Kadalasan</string>
+        <string name="madalas">Madalas</string>
+        <string name="laging">Laging</string>
+
+        <!-- Bisaya -->
+        <string name="walay_sukad">Walay Sukad</string>
+        <string name="panagsa_ra">Panagsa ra</string>
+        <string name="usahay">Usahay</string>
+        <string name="permi">Permi</string>
+        <string name="kanunay">Kanunay</string>
+
+        <!-- Title-->
+        <string name="get_assessed_title_english">Get Assessed</string>
+        <string name="get_assessed_title_tagalog">Magpa-assess</string>
+        <string name="get_assessed_title_bisaya">Magpa-asses</string>
+
+</resources>

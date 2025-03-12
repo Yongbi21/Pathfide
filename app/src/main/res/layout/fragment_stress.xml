@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Build resilience"
+            android:textColor="#072E52"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:paddingRight="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:text="People who are emotionally well, experts say, have fewer negative emotions and are able to bounce back from difficulties faster. This quality is called resilience. Learning healthy ways to cope and how to draw from resources in your community can help you build resilience."
+            android:textColor="#072E52"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="288dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="Info Icon"
+            android:src="@drawable/info" />
+    </RelativeLayout>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1 - Assessment -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress1"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress1"
+                        android:text="Develop healthy physical habits. Healthy eating, physical activity, and regular sleep can improve your physical and mental health."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2 - Seek Professional Help -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress2"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress2"
+                        android:text="Take time for yourself. Make taking care of yourself part of your daily routine. Take time to notice the good moments or do something that you enjoy, like reading a book or listening to music."                       android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3 - Mindfulness and Meditation -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress3"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress3"
+                        android:text="Look at problems from different angles. Think of challenging situations as growth opportunities. Try to see the positive side of things. Learn from your mistakes and don’t dwell on them."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress4"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress4"
+                        android:text="Practice gratitude. Take time to note things to be thankful for each day."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress5"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress5"
+                        android:text="Explore your beliefs about the meaning and purpose of life. Think about how to guide your life by the principles that are important to you."                            android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress6"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress6"
+                        android:text="Tap into your social connections and community. Surround yourself with positive, healthy people. Ask friends, family, or trusted members of your community for information or assistance when you need it. Look for cultural practices that you feel help in times of stress."                            android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/stress7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/titleStress7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/starstress7"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/titleStress7"
+                        android:text="Get help for mental health and substance use disorders. Talk with a health care professional if you’re having trouble coping. Or call SAMHSA’s free national helpline at 1-800-662-HELP. If you or someone you know is thinking about suicide, you can call the National Suicide Prevention Lifeline at 1-800-273-TALK. You can also text “HOME” to the Crisis Text Line at 741741."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

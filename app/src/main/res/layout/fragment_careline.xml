@@ -1,0 +1,186 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Back Button at the Top -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/back_black"
+            android:contentDescription="Back" />
+
+        <RelativeLayout
+            android:id="@+id/hotline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
+
+            <ImageView
+                android:id="@+id/careView"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/care"
+                android:contentDescription="Care Hotline Logo" />
+
+            <TextView
+                android:id="@+id/careHotline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/careView"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/aclonica"
+                android:text="Care Hotline"
+                android:textColor="#2169ac"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/carecallLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
+
+            <ImageView
+                android:id="@+id/carecallImage"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/hotline"
+                android:contentDescription="Emergency Hotline Logo" />
+
+            <TextView
+                android:id="@+id/callImageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/carecallImage"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="In case of emergency, contact"
+                android:textColor="#2169ac"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/assessmentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="In Touch: Crisis Line"
+                    android:textColor="#32598d"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="15dp"
+                    android:text="In Touch: Crisis Line ay nakatuon sa pagbibigay
+            24/7, libre, mahabagin at kumpidensyal na suporta sa pamamagitan ng..."
+                    android:textColor="#32598d"
+                    android:textSize="16sp" />
+
+                <!-- Horizontal Layout for ImageView and Phone Number -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/baseline_person_pin_24"
+                        android:backgroundTint="@color/navy_blue"
+                        android:contentDescription="Phone Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="Volunteer"
+                        android:textColor="#32598d"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Horizontal Layout for ImageView and Phone Number -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/call"
+                        android:contentDescription="Phone Icon"
+                        android:layout_marginEnd="8dp"
+                        app:tint="@color/navy_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="+63 2 8893 7603"
+                        android:textColor="#32598d"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingTop="10dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/world"
+                        android:contentDescription="Website Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="in-touch.org"
+                        android:textColor="#32598d"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

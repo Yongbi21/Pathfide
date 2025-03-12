@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="end">
+
+                <Button
+                    android:id="@+id/settingsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:elevation="0dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:elevation="11dp"
+                    android:padding="10dp"
+                    android:src="@drawable/world" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:text="Account Setup"
+                android:textColor="#072E52"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/settingUpdateImage2"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:padding="15dp"
+                android:src="@drawable/person"
+                app:civ_border_color="#2196F3"
+                app:civ_border_width="1dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/firstNameAccountTherapistProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="First Name"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/lastNameAccountTherapistProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Last Name"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/middleNameAccountProfileTherapistInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/middleNameAccountTherapistProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Middlename (Optional)"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Gender Spinner -->
+            <Spinner
+                android:id="@+id/genderSpinnerAccountTherapist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/spinner_background"
+                android:padding="10dp"
+
+                android:entries="@array/gender_array" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:endIconDrawable="@drawable/calendar"
+                app:endIconMode="custom"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/birthdateAccounTherapisttProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Birthdate"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/aboutAccounTherapisttProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="About me"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/educationAccounTherapisttProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Education"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/affiliateAccounTherapisttProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Affiliation"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/clinicalHoursTherapistProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="time"
+                    android:hint="Clinical Hours"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/onlineClinicTherapistProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Online Clinic"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/clinicalAddressAccountProfileTherapistInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:padding="0dp"
+                app:boxBackgroundColor="@android:color/transparent">
+
+                <EditText
+                    android:id="@+id/clinicalAddressTherapistProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="Clinical Address"
+                    android:importantForAutofill="no"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    tools:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#072E52"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

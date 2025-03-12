@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "914346132615",
+    "project_id": "pathfide",
+    "storage_bucket": "pathfide.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914346132615:android:8cbf3aadbf113e69d22422",
+        "android_client_info": {
+          "package_name": "com.example.pathfide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914346132615-jjd667dtlmr8ki0eda3hgpv4mpk15l2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pathfide",
+            "certificate_hash": "fa98ac811269dde4eaa2e072c3b0155bfd70500a"
+          }
+        },
+        {
+          "client_id": "914346132615-j2grvmf945s21i31rl482cton9e6n9qh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5JIsT8jpsLB8SuwCoH9b8kIhaWCiEN9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914346132615-j2grvmf945s21i31rl482cton9e6n9qh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

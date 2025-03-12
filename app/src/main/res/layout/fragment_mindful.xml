@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Be mindful"
+            android:textColor="#072E52"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:paddingRight="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:text="The concept of mindfulness is simple. This ancient practice is about being completely aware of what’s happening in the present—of all that’s going on inside and all that’s happening around you. It means not living your life on “autopilot.” Becoming a more mindful person requires commitment and practice. Here are some tips to help you get started."
+            android:textColor="#072E52"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="265dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="Info Icon"
+            android:src="@drawable/info" />
+
+    </RelativeLayout>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1 - Assessment -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mindfulness1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/mindfulnessText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/mindfulnessMed1"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/mindfulnessText1"
+                        android:text="Take some deep breaths. Breathe in through your nose to a count of 4, hold for 1 second and then exhale through the mouth to a count of 5. Repeat often."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2 - Seek Professional Help -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mindfulness2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/mindfulnessText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/mindfulnessMed2"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/mindfulnessText2"
+                        android:text="Enjoy a stroll. As you walk, notice your breath and the sights and sounds around you. As thoughts and worries enter your mind, note them but then return to the present."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3 - Mindfulness and Meditation -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mindfulness3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/mindfulnessText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/mindfulnessMed3"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/mindfulnessText3"
+                        android:text="Practice mindful eating. Be aware of taste, textures, and flavors in each bite, and listen to your body when you are hungry and full."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mindfulness4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/mindfulnessText4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/mindfulnessMed4"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/mindfulnessText4"
+                        android:text="Be aware of your body. Mentally scan your body from head to toe. Bring your attention to how each part feels."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mindfulness5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/mindfulnessText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/mindfulnessMed5"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/mindfulnessText5"
+                        android:text="Find mindfulness resources,  including online programs and teacher-guided practices."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

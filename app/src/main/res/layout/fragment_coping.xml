@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Get quality sleep"
+            android:textColor="#072E52"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:paddingRight="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:text="To fit in everything we want to do in our day, we often sacrifice sleep. But sleep affects both mental and physical health. It’s vital to your well-being. When you’re tired, you can’t function at your best. Sleep helps you think more clearly, have quicker reflexes and focus better. Take steps to make sure you regularly get a good night’s sleep."
+            android:textColor="#072E52"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/infoIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="293dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="Info Icon"
+            android:src="@drawable/info" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Card 1 - Assessment -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss1"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/copingLoss1"
+                        android:text="Stick to a sleep schedule. Go to bed and wake up at the same time every day, even on the weekends."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 2 - Seek Professional Help -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss2"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/copingLoss2"
+                        android:text="Get some exercise every day. But not close to bedtime."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 3 - Mindfulness and Meditation -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss3"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/copingLoss3"
+                        android:text="Go outside. Try to get natural sunlight for at least 30 minutes every day."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss4"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/copingLoss4"
+                        android:text="Avoid nicotine and caffeine. Both are stimulants that keep you awake. Caffeine can take 6–8 hours to wear off completely."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss5"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/copingLoss5"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Don’t take naps after mid-afternoon. And keep them short."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss6"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/copingLoss6"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Avoid alcohol and large meals before bedtime. Both can prevent deep, restorative sleep."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss7"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/copingLoss7"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Limit electronics before bed. Try reading a book, listening to soothing music, or another relaxing activity instead."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss8"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/copingLoss8"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Create a good sleeping environment. Keep the temperature cool if possible. Get rid of sound and light distractions. Make it dark. Silence your cell phone."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss9"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/copingLoss9"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="Don’t lie in bed awake. If you can’t fall asleep after 20 minutes, get up and do a relaxing activity until you feel sleepy again."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/coping10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#BDDDF4"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/copingLoss10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <ImageButton
+                        android:id="@+id/copingSelfLoss10"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="#BDDDF4"
+                        android:src="@drawable/default_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/copingLoss10"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="5dp"
+                        android:text="See your health care provider if nothing you try helps. They can determine if you need further testing. They can also help you learn new ways to manage stress."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
