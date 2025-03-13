@@ -114,7 +114,7 @@
                     R.id.bookingMethodFragment,
                     R.id.scheduledTimeFragment,
                     R.id.adminPanelFragment,
-
+                    R.id.sessionStatusFragment,
                     ),
                 drawerLayout
             )
@@ -305,6 +305,9 @@
                     menu.findItem(R.id.therapistProfileFragment)?.isVisible = false
                     menu.findItem(R.id.clientHistoryFragment)?.isVisible = true
                     menu.findItem(R.id.therapistHistoryFragment)?.isVisible = false
+                    menu.findItem(R.id.sessionStatusFragment)?.isVisible = false
+                    menu.findItem(R.id.adminPanelFragment)?.isVisible = false
+
                 }
                 "THERAPIST" -> {
                     Log.d("MainActivity", "setupNavigationMenu: Therapist-specific menu setup")
@@ -316,6 +319,9 @@
                     menu.findItem(R.id.therapistHistoryFragment)?.isVisible = true
                     menu.findItem(R.id.favoriteFragment)?.isVisible = false
                     menu.findItem(R.id.LanguageSettings)?.isVisible = false
+                    menu.findItem(R.id.sessionStatusFragment)?.isVisible = false
+
+
                 }
                 "ADMIN" -> {
                     // Show admin-specific items or features
@@ -329,6 +335,8 @@
                     menu.findItem(R.id.therapistHistoryFragment)?.isVisible = false
                     menu.findItem(R.id.favoriteFragment)?.isVisible = false
                     menu.findItem(R.id.LanguageSettings)?.isVisible = false
+                    menu.findItem(R.id.sessionStatusFragment)?.isVisible = true
+
                 }
             }
 

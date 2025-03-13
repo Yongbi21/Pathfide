@@ -19,6 +19,6 @@ data class ScheduledSession(
     val timestamp: Timestamp = Timestamp.now(),
     val paymentStatus: String = "Pending",
     val isRebooking: Boolean = false,
-    val isCompleted: Boolean = false
-
+    val isCompleted: Boolean = false,
+    var sessionStatus: String = ""
 )

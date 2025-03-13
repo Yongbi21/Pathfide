@@ -34,6 +34,16 @@
             android:icon="@drawable/wishlist" />
 
         <item
+            android:id="@+id/adminPanelFragment"
+            android:title="Admin Panel"
+            android:icon="@drawable/admin" />
+
+        <item
+            android:id="@+id/sessionStatusFragment"
+            android:title="Session Status"
+            android:icon="@drawable/loading" />
+
+        <item
             android:id="@+id/LanguageSettings"
             android:title="Assesment Language"
             android:icon="@drawable/user" />

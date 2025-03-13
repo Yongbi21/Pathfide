@@ -496,4 +496,14 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/sessionStatusFragment"
+        android:name="com.example.pathfide.Fragments.SessionStatusFragment"
+        android:label="Session Status"
+        tools:layout="@layout/fragment_session_status" >
+
+
+    </fragment>
+
+
 </navigation>

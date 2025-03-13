@@ -27,12 +27,43 @@
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textColor="@color/navy_blue"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/tvNameLabel"
+            app:layout_constraintEnd_toStartOf="@id/btnTherapistAction"
             app:layout_constraintTop_toTopOf="@id/tvNameLabel"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintHorizontal_weight="1"/>
+
+
+        <ImageButton
+            android:id="@+id/btnTherapistAction"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerInside"
+            android:padding="8dp"
+            android:src="@drawable/checkbutton"
+            android:visibility="gone"
+            android:focusable="true"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3"/>
+
+
+        <ImageView
+            android:id="@+id/imgStatusChanged"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/checked"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvSessionTypeLabel"
@@ -57,20 +88,7 @@
             app:layout_constraintTop_toTopOf="@id/tvSessionTypeLabel"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Rebooked Tag -->
-        <TextView
-            android:id="@+id/tvRebookedTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rebooked"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            android:background="@drawable/tag_background"
-            android:padding="4dp"
-            app:layout_constraintStart_toEndOf="@id/tvSessionType"
-            app:layout_constraintTop_toTopOf="@id/tvSessionType"
-            app:layout_constraintBottom_toBottomOf="@id/tvSessionType"
-            android:visibility="gone" />
+
 
         <TextView
             android:id="@+id/tvDateLabel"
