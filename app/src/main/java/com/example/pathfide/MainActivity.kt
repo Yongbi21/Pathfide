@@ -12,6 +12,7 @@
     import androidx.annotation.RequiresApi
     import androidx.appcompat.app.AppCompatActivity
     import androidx.appcompat.widget.Toolbar
+    import androidx.core.app.ActivityCompat
     import androidx.core.content.ContextCompat
     import androidx.drawerlayout.widget.DrawerLayout
     import androidx.lifecycle.ViewModelProvider
@@ -50,6 +51,7 @@
         private lateinit var db: FirebaseFirestore
         private lateinit var notificationViewModel: NotificationViewModel
         private lateinit var auth: FirebaseAuth
+        private val POST_NOTIFICATIONS_PERMISSION = "android.permission.POST_NOTIFICATIONS"
 
 
         @SuppressLint("LogNotTimber")
@@ -118,6 +120,14 @@
                     ),
                 drawerLayout
             )
+
+            // Request notification permission for Android 13+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                if (ContextCompat.checkSelfPermission(this, POST_NOTIFICATIONS_PERMISSION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, arrayOf(POST_NOTIFICATIONS_PERMISSION), 101)
+                }
+            }
 
 
             // Set up the toolbar
