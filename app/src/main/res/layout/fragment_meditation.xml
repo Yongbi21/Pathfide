@@ -40,7 +40,7 @@
             android:id="@+id/infoIcon"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginStart="284dp"
+            android:layout_marginStart="294dp"
             android:layout_marginTop="15dp"
             android:contentDescription="Info Icon"
             android:src="@drawable/info" />
