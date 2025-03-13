@@ -22,6 +22,6 @@ dependencyResolutionManagement {
 }
 
 
-rootProject.name = "MindPath"
+rootProject.name = "Mindpath"
 include(":app")
  

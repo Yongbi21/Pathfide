@@ -31,15 +31,10 @@ import com.zegocloud.uikit.prebuilt.call.ZegoUIKitPrebuiltCallService
 import com.zegocloud.uikit.prebuilt.call.event.CallEndListener
 import com.zegocloud.uikit.prebuilt.call.event.ZegoCallEndReason
 import com.zegocloud.uikit.service.defines.ZegoUIKitUser
-import okhttp3.OkHttpClient
-import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import java.io.IOException
 
 class ChatFragment : Fragment() {
 

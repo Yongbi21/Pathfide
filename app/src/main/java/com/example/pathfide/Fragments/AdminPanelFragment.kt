@@ -19,8 +19,6 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.pathfide.Utils.PaymentNotificationHelper
 import android.app.Dialog
-import android.graphics.drawable.ColorDrawable
-import androidx.compose.ui.graphics.Color
 import com.google.firebase.firestore.ListenerRegistration
 
 
