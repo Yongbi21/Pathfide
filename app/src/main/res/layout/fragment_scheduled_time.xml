@@ -7,7 +7,6 @@
 
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookingNoticeRecyclerView"
         android:layout_width="0dp"
