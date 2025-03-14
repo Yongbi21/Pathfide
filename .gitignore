@@ -14,4 +14,8 @@
 .cxx
 local.properties
 app/src/main/res/values/credentials.xml
-/release
+app/release/
+*.jks
+*.keystore
+*.apk
+*.aab
