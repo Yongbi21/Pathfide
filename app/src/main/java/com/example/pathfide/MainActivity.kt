@@ -117,6 +117,7 @@
                     R.id.scheduledTimeFragment,
                     R.id.adminPanelFragment,
                     R.id.sessionStatusFragment,
+                    R.id.bookingFormFragment
                     ),
                 drawerLayout
             )
@@ -330,6 +331,8 @@
                     menu.findItem(R.id.favoriteFragment)?.isVisible = false
                     menu.findItem(R.id.LanguageSettings)?.isVisible = false
                     menu.findItem(R.id.sessionStatusFragment)?.isVisible = false
+                    menu.findItem(R.id.adminPanelFragment)?.isVisible = false
+
 
 
                 }

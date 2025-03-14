@@ -15,7 +15,7 @@
         var lastName: String? = null,
         val profileImage: String = "",
         val userId: String = "",
-        var user: User? = null,
+        var user: User? = null, // Add this field to hold user details
         val isSystemMessage: Boolean = false,
         val formattedTime: String = ""
 

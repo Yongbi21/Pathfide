@@ -46,7 +46,7 @@
         <item
             android:id="@+id/LanguageSettings"
             android:title="Assesment Language"
-            android:icon="@drawable/user" />
+            android:icon="@drawable/settings" />
     </group>
 
 
