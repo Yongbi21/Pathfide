@@ -21,6 +21,6 @@ data class ScheduledSession(
     val isRebooking: Boolean = false,
     val isCompleted: Boolean = false,
     var sessionStatus: String = "",
-    val therapistName: String = ""
+    val therapistName: String = "" 
 
 )

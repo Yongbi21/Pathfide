@@ -275,6 +275,7 @@
                     "clientId" to userId,
                     "timestamp" to FieldValue.serverTimestamp(),
                     "isRebooking" to (selectedTherapistId != null),
+                    "therapistName" to sharedViewModel.fullName.value,
                     "status" to "Pending"
 
 

@@ -45,7 +45,7 @@ class PaymentFragment : Fragment() {
     private lateinit var db: FirebaseFirestore
     private var therapistId: String? = null
     private var paymentProofUri: Uri? = null
-    private var appointmentId: String? = null
+    private var sessionId: String? = null
 
     private lateinit var tvRate: TextView
     private lateinit var imgGcashQr: ImageView
@@ -78,7 +78,7 @@ class PaymentFragment : Fragment() {
         val args = arguments
         if (args != null) {
             therapistId = args.getString("therapistId")
-            appointmentId = args.getString("appointmentId")
+            sessionId = args.getString("sessionId")
             fetchTherapistRate()
         }
 
@@ -264,7 +264,7 @@ class PaymentFragment : Fragment() {
             "paymentProofUrl" to imageUrl,
             "paymentTimestamp" to SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date()),
             "status" to "Pending",
-            "appointmentId" to appointmentId,
+            "sessionId" to sessionId,
 
         )
 

@@ -30,8 +30,7 @@ data class Payment(
     val paymentTimestamp: String = "",
     val paymentProofUrl: String = "",
     val profileImageUrl: String = "",
-    val status: String = "",
-    val sessionId: String = "",
+    val status: String = ""
 )
 
 

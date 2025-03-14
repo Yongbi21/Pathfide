@@ -49,7 +49,7 @@ class AppointmentHistoryAdapter(private val userType: String) : RecyclerView.Ada
         @SuppressLint("SetTextI18n")
         fun bind(session: ScheduledSession) {
             tvName.text = "${session.firstName} ${session.lastName}"
-            tvTherapistName.text = session.therapistName
+            tvTherapistName.text = session.therapistName 
 
             tvSessionType.text = session.sessionType
             tvDate.text = session.appointmentDate

@@ -100,7 +100,7 @@ class SessionStatusFragment : Fragment() {
         for (session in sessions) {
             // Check payment status
             firestore.collection("payments")
-                .whereEqualTo("appointmentId", session.appointmentId)
+                .whereEqualTo("sessionId", session.id)
                 .get()
                 .addOnSuccessListener { paymentSnapshot ->
                     val paymentStatus = if (!paymentSnapshot.isEmpty &&

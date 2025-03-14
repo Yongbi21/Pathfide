@@ -36,6 +36,29 @@
             app:layout_constraintTop_toTopOf="@id/tvNameLabel"
             app:layout_constraintHorizontal_weight="1"/>
 
+        <!-- Added Therapist Name -->
+        <TextView
+            android:id="@+id/tvTherapistNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Therapist:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/navy_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+        <TextView
+            android:id="@+id/tvTherapistName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/navy_blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/tvTherapistNameLabel"
+            app:layout_constraintTop_toTopOf="@id/tvTherapistNameLabel"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageButton
             android:id="@+id/btnTherapistAction"
@@ -52,7 +75,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3"/>
-
 
         <ImageView
             android:id="@+id/imgStatusChanged"
@@ -75,7 +97,7 @@
             android:textStyle="bold"
             android:textColor="@color/navy_blue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvName" />
+            app:layout_constraintTop_toBottomOf="@id/tvTherapistName" />
 
         <TextView
             android:id="@+id/tvSessionType"
@@ -87,8 +109,6 @@
             app:layout_constraintStart_toEndOf="@id/tvSessionTypeLabel"
             app:layout_constraintTop_toTopOf="@id/tvSessionTypeLabel"
             app:layout_constraintEnd_toEndOf="parent" />
-
-
 
         <TextView
             android:id="@+id/tvDateLabel"
@@ -158,7 +178,6 @@
             app:layout_constraintTop_toTopOf="@id/tvStatusLabel"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Payment Status Label -->
         <TextView
             android:id="@+id/tvPaymentStatusLabel"
             android:layout_width="wrap_content"
@@ -171,7 +190,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvStatus" />
 
-        <!-- Payment Status -->
         <TextView
             android:id="@+id/tvPaymentStatus"
             android:layout_width="0dp"
@@ -182,7 +200,6 @@
             app:layout_constraintStart_toEndOf="@id/tvPaymentStatusLabel"
             app:layout_constraintTop_toTopOf="@id/tvPaymentStatusLabel"
             app:layout_constraintEnd_toEndOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

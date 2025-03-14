@@ -15,9 +15,7 @@
         import kotlinx.coroutines.delay
         import kotlinx.coroutines.launch
         import kotlinx.coroutines.tasks.await
-
         import android.content.Context
-        import com.google.firebase.firestore.Query
 
 
         class NotificationViewModel : ViewModel() {
@@ -446,20 +444,37 @@
 
                         // Fetch correct payment status for each session
                         val updatedSessions = sessions.map { session ->
-                            val paymentQuery = firestore.collection("payments")
-                                .whereEqualTo("clientId", currentUserId)
-                                .whereEqualTo("sessionId", session.id) // Ensure correct session
-                                .orderBy("timestamp", Query.Direction.DESCENDING) // Get latest payment
-                                .limit(1)
-                                .get()
-                                .await()
+                            // Change the query to match on therapistId and clientId
+                            // Since we can't be sure which side of the relationship we're on
+                            val paymentQuery = when (userType) {
+                                "CLIENT" -> firestore.collection("payments")
+                                    .whereEqualTo("clientId", currentUserId)
+                                    .whereEqualTo("therapistId", session.therapistId)
+                                "THERAPIST" -> firestore.collection("payments")
+                                    .whereEqualTo("therapistId", currentUserId)
+                                    .whereEqualTo("clientId", session.userId)
+                                else -> null
+                            }
 
-                            val paymentDoc = paymentQuery.documents.firstOrNull()
-                            val paymentStatus = paymentDoc?.getString("status") ?: "Pending"
+                            val paymentStatus = if (paymentQuery != null) {
+                                val paymentDocs = paymentQuery.get().await()
+                                val paymentDoc = paymentDocs.documents.firstOrNull()
+                                val status = paymentDoc?.getString("status") ?: "Pending"
 
-                            Log.d("NotificationViewModel", "Session ${session.id} - Payment ID: ${paymentDoc?.id}, Status: $paymentStatus")
+                                Log.d("NotificationViewModel", "Session ${session.id} - Payment ID: ${paymentDoc?.id}, Status: $status")
 
-                            session.copy(paymentStatus = if (paymentStatus == "Payment Successful!") "Paid" else "Pending")
+                                when (status) {
+                                    "Payment Successful!" -> "Paid"
+                                    "Paid" -> "Paid"
+                                    "Payment Declined" -> "Declined"
+                                    "Declined" -> "Declined"
+                                    else -> "Pending"
+                                }
+                            } else {
+                                "Pending"
+                            }
+
+                            session.copy(paymentStatus = paymentStatus)
                         }
 
                         if (updatedSessions.isNotEmpty()) {
@@ -477,7 +492,6 @@
                     }
                 }
             }
-
 
             private suspend fun addAcceptanceStatus(sessions: List<ScheduledSession>, userType: String) {
                 val updatedSessions = mutableListOf<ScheduledSession>()
