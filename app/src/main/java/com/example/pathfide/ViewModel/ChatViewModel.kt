@@ -112,6 +112,7 @@ class ChatViewModel : ViewModel() {
                                         lastMessage = lastMessage.content,
                                         lastMessageTimestamp = lastMessage.timestamp,
                                         firstName = userDoc.getString("firstName") ?: "",
+                                        surName = userDoc.getString("surName") ?: "",
                                         lastName = userDoc.getString("lastName") ?: "",
                                         avatarUrl = userDoc.getString("profileImageUrl") ?: "",
                                         userId = otherUserId

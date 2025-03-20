@@ -45,7 +45,7 @@ class RecentChatsAdapter(
         private val lastMessageTextView: TextView = itemView.findViewById(R.id.recentChatTextLastMessage)
 
         fun bind(chat: Chat, user: User?, onChatClick: (Chat) -> Unit) {
-            nameTextView.text = user?.let { "${it.firstName} ${it.lastName}" } ?: "Unknown User"
+            nameTextView.text = user?.let { "${it.firstName} ${it.surName}${user.lastName}" } ?: "Unknown User"
             lastMessageTextView.text = chat.lastMessage
 
             // Format and set the time using the new method

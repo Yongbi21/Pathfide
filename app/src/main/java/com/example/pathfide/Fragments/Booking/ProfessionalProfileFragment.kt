@@ -44,7 +44,7 @@ class ProfessionalProfileFragment : Fragment() {
             avatarUrl = it.getString("avatarUrl")
             education = it.getString("education")
             affiliation = it.getString("affiliation")
-            clinicalHours = it.getString("clinicalHours")
+            clinicalHours = it.getString("clinicTime")
             onlineClinic = it.getString("onlineClinic")
             physicianRate = it.getString("physicianRate")
             userId = it.getString("userId")

@@ -12,6 +12,7 @@
         val lastMessageTimestamp: Date? = null,
         var avatarUrl: String = "",
         var firstName: String? = null,
+        var surName: String? = null,
         var lastName: String? = null,
         val profileImage: String = "",
         val userId: String = "",

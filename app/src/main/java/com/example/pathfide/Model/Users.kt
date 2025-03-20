@@ -3,6 +3,7 @@ package com.example.pathfide.Model
 data class User(
     var id: String = "",
     val firstName: String = "",
+    val surName: String = "",
     val lastName: String = "",
     val middleName: String = "",
     val email: String = "",

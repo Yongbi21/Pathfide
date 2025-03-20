@@ -364,7 +364,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Onsite Clinic"
+                        android:hint="Online Clinic"
                         android:importantForAutofill="no"
                         android:paddingStart="10dp"
                         android:paddingEnd="0dp"

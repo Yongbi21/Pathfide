@@ -31,7 +31,7 @@ class UsersAdapter(private val onUserClicked: (User) -> Unit) :
 
         // Handle user click
         holder.itemView.setOnClickListener {
-            Log.d("UsersAdapter", "User clicked: ${user.firstName} ${user.lastName} with ID: ${user.id}")
+            Log.d("UsersAdapter", "User clicked: ${user.firstName} ${user.surName} ${user.lastName.trim()} with ID: ${user.id} ")
             onUserClicked(user)
         }
     }
@@ -40,7 +40,7 @@ class UsersAdapter(private val onUserClicked: (User) -> Unit) :
         fullList = users
         Log.d("UsersAdapter", "Full user list set with size: ${fullList.size}")
         fullList.forEach { user ->
-            Log.d("UsersAdapter", "User in fullList: ${user.firstName.trim()} ${user.lastName.trim()}")
+            Log.d("UsersAdapter", "User in fullList: ${user.firstName.trim()} ${user.surName.trim()} ${user.lastName.trim()}")
         }
         submitList(users) // Use 'users' directly
     }
@@ -53,14 +53,16 @@ class UsersAdapter(private val onUserClicked: (User) -> Unit) :
             emptyList() // Show an empty list when the input is cleared
         } else {
             fullList.filter { user ->
-                val fullName = "${user.firstName.trim()} ${user.lastName.trim()}"
+                val fullName = "${user.firstName.trim()} ${user.surName.trim()} ${user.lastName.trim()}"
 
                 // Log the full name and query comparison
                 Log.d("UsersAdapter", "Checking user: $fullName against query '$trimmedQuery'")
 
                 fullName.contains(trimmedQuery, ignoreCase = true) ||
                         user.firstName.trim().contains(trimmedQuery, ignoreCase = true) ||
+                        user.surName.trim().contains(trimmedQuery, ignoreCase = true) ||
                         user.lastName.trim().contains(trimmedQuery, ignoreCase = true)
+
             }.also { list ->
                 Log.d("UsersAdapter", "Filtered users: ${list.size} matching for query '$trimmedQuery'")
             }
@@ -75,7 +77,7 @@ class UsersAdapter(private val onUserClicked: (User) -> Unit) :
         private val statusImageView: ImageView = itemView.findViewById(R.id.statusOnline)
 
         fun bind(user: User) {
-            nameTextView.text = "${user.firstName} ${user.lastName}"
+            nameTextView.text = "${user.firstName} ${user.surName}${user.lastName}"
 
             Glide.with(itemView.context)
                 .load(user.profileImageUrl)

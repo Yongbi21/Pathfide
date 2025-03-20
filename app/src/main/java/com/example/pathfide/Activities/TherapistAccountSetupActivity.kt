@@ -201,16 +201,16 @@ class TherapistAccountSetupActivity : AppCompatActivity() {
         if (userId != null) {
             val therapistInfo = hashMapOf(
                 "firstName" to firstNameEditText.text.toString(),
-                "lastName" to lastNameEditText.text.toString(),
+                "surName" to lastNameEditText.text.toString(),
                 "middleName" to middleNameEditText.text.toString(),
                 "gender" to genderSpinner.selectedItem.toString(),
                 "birthdate" to birthdateEditText.text.toString(),
                 "about" to aboutMeEditText.text.toString(),
                 "education" to educationEditText.text.toString(),
                 "affiliation" to affiliationEditText.text.toString(),
-                "clinicalHours" to clinicalHoursEditText.text.toString(),
+                "clinicTime" to clinicalHoursEditText.text.toString(),
                 "onlineClinic" to onlineClinicEditText.text.toString(),
-                "clinicalAddress" to clinicalAddressEditText.text.toString(),
+                "clinicAddress" to clinicalAddressEditText.text.toString(),
                 "userType" to "THERAPIST"
             )
 

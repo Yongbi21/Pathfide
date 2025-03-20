@@ -443,5 +443,3 @@ class ClientProfileFragment : Fragment(R.layout.fragment_profile) {
 
 }
 
-// Data class to hold user data
-data class UserData(val firstName: String, val lastName: String, val profileImageUrl: String?)

@@ -184,6 +184,13 @@ class TherapistProfileFragment : Fragment(R.layout.fragment_therapist_profile) {
         clinicalHoursEditText.setText("$openingTimeString - $closingTimeString")
     }
 
+//    clinicTime=9:00am-7:00pm,  = clinicalHours
+//    clinicAddress=Yale Univ, clinicalAddress
+//    surName=Dy, = lastName
+//    gender=Female,
+
+
+
     private fun fetchUserData() {
         val userId = auth.currentUser?.uid
         if (userId != null) {
@@ -193,12 +200,12 @@ class TherapistProfileFragment : Fragment(R.layout.fragment_therapist_profile) {
                     if (document != null) {
                         // Retain previous functionality while focusing on specific fields
                         firstNameEditText.setText(document.getString("firstName"))
-                        lastNameEditText.setText(document.getString("lastName"))
+                        lastNameEditText.setText(document.getString("surName"))
                         middleNameEditText.setText(document.getString("middleName"))
 
                         // Fetch and set additional relevant data
                         val aboutMe = document.getString("about") ?: ""
-                        val clinicalAddress = document.getString("clinicalAddress") ?: ""
+                        val clinicalAddress = document.getString("clinicAddress") ?: ""
 
                         aboutEditText.setText(aboutMe)
                         clinicalAddressEditText.setText(clinicalAddress)
@@ -207,7 +214,7 @@ class TherapistProfileFragment : Fragment(R.layout.fragment_therapist_profile) {
                         birthdateEditText.setText(document.getString("birthdate"))
                         educationEditText.setText(document.getString("education"))
                         affiliationEditText.setText(document.getString("affiliation"))
-                        clinicalHoursEditText.setText(document.getString("clinicalHours"))
+                        clinicalHoursEditText.setText(document.getString("clinicTime"))
                         onlineClinicEditText.setText(document.getString("onlineClinic"))
                         val physicianRate = document.getString("physicianRate") ?: "0.00"
                         val displayRate = if (physicianRate.startsWith("PHP ")) physicianRate else "PHP $physicianRate"
@@ -267,16 +274,16 @@ class TherapistProfileFragment : Fragment(R.layout.fragment_therapist_profile) {
             }
             val userInfo = hashMapOf(
                 "firstName" to firstNameEditText.text.toString(),
-                "lastName" to lastNameEditText.text.toString(),
+                "surName" to lastNameEditText.text.toString(),
                 "middleName" to middleNameEditText.text.toString(),
                 "gender" to genderSpinner.selectedItem.toString(),
                 "birthdate" to birthdateEditText.text.toString(),
                 "about" to aboutEditText.text.toString(),
                 "education" to educationEditText.text.toString(),
                 "affiliation" to affiliationEditText.text.toString(),
-                "clinicalHours" to clinicalHoursEditText.text.toString(),
+                "clinicTime" to clinicalHoursEditText.text.toString(),
                 "onlineClinic" to onlineClinicEditText.text.toString(),
-                "clinicalAddress" to clinicalAddressEditText.text.toString(),
+                "clinicAddress" to clinicalAddressEditText.text.toString(),
                 "physicianRate" to physicianRateText
             )
 

@@ -53,7 +53,9 @@
         private val dateFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
         private var partnerFirstName: String = ""
         private var partnerLastName: String = ""
+        private var partnerSurName: String = ""
         private var currentUserFirstName: String = ""
+        private var currentUserSurName: String = ""
         private var currentUserLastName: String = ""
 
         override fun onCreateView(
@@ -171,26 +173,36 @@
 
 
         private fun sendCallEndedMessage(messageText: String = "Video call ended.") {
-            Log.d("ChatFragment", "📞 Attempting to send call-ended message: $messageText")
-
             firestore.collection("Calls").document(chatId).get()
                 .addOnSuccessListener { document ->
-                    val initiatorId = document.getString("initiatorId") ?: currentUserId
-                    val messageData = hashMapOf(
-                        "content" to messageText,
-                        "senderId" to initiatorId,
-                        "receiverId" to if (initiatorId == currentUserId) partnerId else currentUserId,
-                        "timestamp" to FieldValue.serverTimestamp(),
-                        "type" to "system"
-                    )
+                    val isCallEnded = document.getBoolean("isCallEnded") ?: false
+                    if (isCallEnded) {
+                        Log.d("ChatFragment", "🚫 Call already ended. Skipping duplicate message.")
+                        return@addOnSuccessListener
+                    }
 
-                    firestore.collection("Chats").document(chatId).collection("messages")
-                        .add(messageData)
+                    // Mark call as ended
+                    firestore.collection("Calls").document(chatId)
+                        .update("isCallEnded", true)
                         .addOnSuccessListener {
-                            Log.d("ChatFragment", "✅ Call-ended system message sent by $initiatorId")
-                        }
-                        .addOnFailureListener { e ->
-                            Log.e("ChatFragment", "❌ Failed to send call-ended message: ${e.message}")
+                            // Now send the message
+                            val initiatorId = document.getString("initiatorId") ?: currentUserId
+                            val messageData = hashMapOf(
+                                "content" to messageText,
+                                "senderId" to initiatorId,
+                                "receiverId" to if (initiatorId == currentUserId) partnerId else currentUserId,
+                                "timestamp" to FieldValue.serverTimestamp(),
+                                "type" to "system"
+                            )
+
+                            firestore.collection("Chats").document(chatId).collection("messages")
+                                .add(messageData)
+                                .addOnSuccessListener {
+                                    Log.d("ChatFragment", "✅ Call-ended system message sent by $initiatorId")
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.e("ChatFragment", "❌ Failed to send call-ended message: ${e.message}")
+                                }
                         }
                 }
                 .addOnFailureListener { e ->
@@ -278,6 +290,7 @@
                         val user = document.toObject(User::class.java)
                         user?.let {
                             partnerFirstName = it.firstName
+                            partnerSurName = it.surName
                             partnerLastName = it.lastName
                             updateUIWithUserDetails(it)
                             isPartnerOnline = it.isOnline
@@ -300,6 +313,7 @@
                         val user = document.toObject(User::class.java)
                         user?.let {
                             currentUserFirstName = it.firstName
+                            currentUserSurName = it.surName
                             currentUserLastName = it.lastName
                         }
                     }
@@ -311,7 +325,7 @@
 
         private fun updateUIWithUserDetails(user: User) {
             binding.apply {
-                chatUserName.text = "${user.firstName} ${user.lastName}"
+                chatUserName.text = "${user.firstName} ${user.surName}${user.lastName}"
                 chatUserStatus.text = if (user.isOnline) "Online" else "Offline"
 
                 Glide.with(this@ChatFragment)
@@ -366,6 +380,7 @@
                         user?.let {
                             partnerFirstName = it.firstName
                             partnerLastName = it.lastName
+                            partnerSurName = it.surName
                             updateUIWithUserDetails(it)
                             isPartnerOnline = it.isOnline
                             listenForUserStatus(partnerId)
@@ -388,6 +403,7 @@
                         val user = document.toObject(User::class.java)
                         user?.let {
                             currentUserFirstName = it.firstName
+                            currentUserSurName = it.surName
                             currentUserLastName = it.lastName
 
                             // Now that we have both users' details, setup the call invitation
@@ -407,13 +423,15 @@
                 .addOnSuccessListener { partnerDoc ->
                     val partnerFirstName = partnerDoc.getString("firstName") ?: ""
                     val partnerLastName = partnerDoc.getString("lastName") ?: ""
-                    val partnerDisplayName = "$partnerFirstName $partnerLastName".trim()
+                    val partnerSurName = partnerDoc.getString("surName") ?: ""
+                    val partnerDisplayName = "$partnerFirstName $partnerLastName $partnerSurName".trim()
 
                     firestore.collection("users").document(currentUserId).get()
                         .addOnSuccessListener { currentUserDoc ->
                             val currentUserFirstName = currentUserDoc.getString("firstName") ?: ""
                             val currentUserLastName = currentUserDoc.getString("lastName") ?: ""
-                            val currentUserDisplayName = "$currentUserFirstName $currentUserLastName".trim()
+                            val currentUserSurName = currentUserDoc.getString("surName") ?: ""
+                            val currentUserDisplayName = "$currentUserFirstName $currentUserLastName $currentUserSurName".trim()
 
                             val partnerUser = ZegoUIKitUser(partnerId, partnerDisplayName)
 

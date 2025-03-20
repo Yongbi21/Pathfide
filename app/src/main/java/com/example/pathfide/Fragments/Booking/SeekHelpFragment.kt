@@ -86,14 +86,14 @@ class SeekHelpFragment : Fragment(), TherapistAdapter.OnItemClickListener {
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     val firstName = document.getString("firstName") ?: "Mindpath"
-                    val lastName = document.getString("lastName") ?: "User"
+                    val lastName = document.getString("surName") ?: "User"
                     val middleName = document.getString("middleName") ?: ""
                     val description = document.getString("about") ?: "No Description"
                     val clinicLocation = document.getString("clinicalAddress") ?: "No Location"
                     val avatarUrl = document.getString("profileImageUrl") ?: ""
                     val education = document.getString("education") ?: ""
                     val affiliation = document.getString("affiliation") ?: ""
-                    val clinicalHours = document.getString("clinicalHours") ?: ""
+                    val clinicalHours = document.getString("clinicTime") ?: ""
                     val onlineClinic = document.getString("onlineClinic") ?: ""
                     val physicianRate = document.getString("physicianRate") ?: ""
                     val fullName = listOf(firstName, middleName, lastName).filter { it.isNotEmpty() }.joinToString(" ")
